@@ -19,11 +19,8 @@ const orderSchema = new mongoose.Schema(
     totalAmount: { type: Number, required: true },
     status: { type: String, default: "pending" }, // pending, preparing, delivered
     deliveryAddress: {
-      street: String,
-      city: String,
-      state: String,
-      postalCode: String,
-      country: String,
+      type: mongoose.Schema.ObjectId,
+      ref: "address",
     },
   },
   { timestamps: true }

@@ -14,6 +14,10 @@ const paymentSchema = new mongoose.Schema(
     amount: { type: Number, required: true },
     method: { type: String, required: true }, // e.g., Credit Card, PayPal
     status: { type: String, default: "completed" }, // completed, failed
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
   },
   { timestamps: true }
 );
